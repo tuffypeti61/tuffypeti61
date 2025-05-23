@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function rate(){
+            let x = document.getElementById("score").value;
+            x = parseFloat(x);
+            let y;
+            if (x < 0 || x > 100) {
+                y = "无效成绩!";
+            } else if (x < 60) {
+                y = "不及格!";
+            } else if (x < 70) {
+                y = "及格!";
+            } else if (x < 90) {
+                y = "中等!";
+            } else {
+                y = "优秀!";
+            }
+            document.getElementById("out").innerText = y;
+        }
+        /*
+        function rate(){
+            let x = document.getElementById("score").value;
+            x = Math.floor(parseFloat(x) / 10);
+            let y;
+            switch(x){
+                // x除以10后取整数部分
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                    y = "不及格!";
+                    break;
+                case 6:
+                    y = "及格!";
+                    break;
+                case 7:
+                case 8:
+                    y = "中等!";
+                    break;
+                case 9:
+                case 10:
+                    y = "优秀!";
+                    break;
+                default:
+                    y = "无效成绩!";
+            }
+            document.getElementById("out").innerText = y;
+        }
+        */
+    </script>
+</head>
+<body>
+    请输入分:<input type="text" id="score" value="0" size="5" />
+    <input type="button" value="显示评语" onclick="rate()" />
+    <br>评语: <span id="out"></span>
+</body>
+</html>

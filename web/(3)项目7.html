@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            list-style: none;
+        }
+
+        /* 左右箭头样式 */
+        .arrow {
+            text-decoration: none;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        /* 盒子样式 */
+        .box {
+            width: 580px;
+            height: 200px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+
+        /* <a> 标签样式 */
+        .box a {
+            float: left;
+            width: 25px;
+            height: 90px;
+            line-height: 90px;
+            background: #333;
+            opacity: 0.7;
+            text-align: center;
+            border-radius: 4px;
+            visibility: hidden;
+        }
+
+        /* 左箭头样式 */
+        .left-arrow {
+            position: absolute;
+            left: -12px;
+            top: 60px;
+        }
+
+        /* 小圆点列表样式 */
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dots li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        /* 图片样式 */
+        .box img {
+            width: 100%; /* 让图片宽度适应盒子宽度 */
+            height: 100%; /* 让图片高度适应盒子高度 */
+            object-fit: cover; /* 保持图片比例并覆盖整个容器 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/gedan.png" alt="歌单图片">
+        <a href="#" class="arrow left-arrow">&lt;</a>
+        <a href="#" class="arrow">&gt;</a>
+        <ul class="dots">
+            <li>•</li>
+            <li>•</li>
+            <li>•</li>
+        </ul>
+    </div>
+</body>
+</html>

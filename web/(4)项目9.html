@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传智学员信息登记表</title>
+    <style>
+        /* 全局控制 */
+        * {
+            font-size: 12px;
+            font-family: 'Microsoft YaHei';
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        /* 整体 div */
+        .main-container {
+            width: 1431px;
+            height: 717px;
+            background-image: url('images/background.png');
+            position: relative;
+        }
+
+        /* form */
+        form {
+            width: 600px;
+            height: 400px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 30px;
+            position: absolute;
+            left: 48%;
+            top: 10%;
+        }
+
+        /* h2 */
+        h2 {
+            text-align: center;
+            margin-top: 16px;
+            margin-left: 0;
+        }
+
+        /* p */
+        p {
+            margin-top: 20px;
+        }
+
+        /* span */
+        span {
+            width: 75px;
+            display: inline-block;
+            text-align: right;
+            padding: 10px;
+        }
+
+        /* input */
+        input {
+            width: 200px;
+            height: 18px;
+            border: 1px solid #d4cdba;
+            padding: 2px;
+        }
+
+        /* 颜色块 */
+        .color-block {
+            width: 100px;
+            height: 24px;
+        }
+
+        /* 按钮 */
+        button {
+            width: 100px;
+            height: 30px;
+            background-color: #93b518;
+            margin-top: 20px;
+            margin-left: 75px;
+            border-radius: 3px;
+            font-size: 18px;
+            font-family: 'Microsoft YaHei';
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <form>
+            <h2><strong>传智学员信息登记表</strong></h2>
+            <p>
+                <span>用户登录名：</span>
+                <input type="text" name="username">
+            </p>
+            <p>
+                <span>真实姓名：</span>
+                <input type="text" name="realname">
+            </p>
+            <p>
+                <span>真实年龄：</span>
+                <input type="number" name="age">
+            </p>
+            <p>
+                <span>出生日期：</span>
+                <input type="date" name="birthdate">
+            </p>
+            <p>
+                <span>电子邮箱：</span>
+                <input type="email" name="email">
+            </p>
+            <p>
+                <span>身份证号：</span>
+                <input type="text" name="idcard">
+            </p>
+            <p>
+                <span>手机号码：</span>
+                <input type="tel" name="phone">
+            </p>
+            <p>
+                <span>个人主页：</span>
+                <input type="url" name="website">
+            </p>
+            <p>
+                <span>幸运颜色：</span>
+                <input type="color" name="luckycolor">
+            </p>
+            <div class="color-block"></div>
+            <button>提交</button>
+        </form>
+    </div>
+</body>
+</html>
