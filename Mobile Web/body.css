@@ -1,0 +1,51 @@
+/*主体*/
+body {
+    background-color: #f0f0f0; /* 灰色底图 */
+    margin-top: 60px; /* 避免被头部遮挡 */
+    padding: 20px;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    height: calc(100vh - 100px); /* 减去头部和上下边距 */
+}
+
+.left-section-block {
+    flex: 1; /* 占三分之一 */
+    background-color: white;
+    border-radius: 15px; /* 圆滑矩形 */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.right-section-block {
+    flex: 2; /* 占三分之二 */
+    background-color: white;
+    border-radius: 15px; /* 圆滑矩形 */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tab-item {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.tab-item:hover {
+    background-color: #f5f5f5;
+}
+
+.tab-item.active {
+    background-color: #e0e0e0;
+}
+
+.content-item {
+    display: none;
+}
+
+.content-item.active {
+    display: block;
+}
