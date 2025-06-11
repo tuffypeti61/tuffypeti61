@@ -13,6 +13,19 @@
     z-index: 1000;
 }
 
+.avatar {
+    position: fixed; /* 固定定位，脱离文档流 */
+    top: 10px; /* 距离顶部 10px（可根据需求调整） */
+    right: 20px; /* 距离右侧 20px（可根据需求调整） */
+    z-index: 1001; /* 确保头像在 nav 标签上方（原 nav 的 z-index 为 1000） */
+}
+
+.avatar img {
+    width: 40px; /* 保持原尺寸（假设原头像宽高为 40px） */
+    height: 40px;
+    border-radius: 50%; /* 保持原圆角 */
+}
+
 /* 左侧更多按钮和站名容器 */
 .left-section {
     display: flex;
@@ -35,7 +48,7 @@
 }
 
 /* 极客站站名 */
-.site-name {
+.geekname {
     color: purple;
     font-size: 20px;
     font-weight: bold;
@@ -57,35 +70,14 @@
     font-size: 14px;
 }
 
-/* 右侧功能模块 */
-.right-section {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* 元素间距 */
-    margin-left: auto;
-}
-
-/* 发布按钮（加号） */
-.post-btn {
-    width: 36px;
-    height: 36px;
-    background: #ff4757;
-    border: none;
-    border-radius: 50%;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
 /* 个人头像 */
 .avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    object-fit: cover; /* 保持宽高比填充整个容器 */
-    border: 2px solid #f0f0f0;
+    border: 1px solid #7a68a7;
     box-sizing: border-box; /* 确保边框包含在宽高内 */
-    margin-right: 35px; /* 新增：向左微调头像位置 */
+    display: flex;
 }
 
 /* 左侧展开的功能板块（初始隐藏） */

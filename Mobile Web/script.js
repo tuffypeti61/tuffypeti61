@@ -31,6 +31,41 @@ function checkLoginStatus() {
     }
 }
 
+//发帖按钮点击事件
+function submitPost() {
+    const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('users'));
+    const postTitle = document.getElementById('tieniu-postTitle').value;
+    const postContent = document.getElementById('tieniu-postContent').value;
+    const postImage = document.getElementById('tieniu-postImage').files[0];
+
+    if (!currentUser || !users[currentUser]) {
+        alert('请先登录');
+        return;
+    }
+
+    const newPost = {
+        title: postTitle,
+        content: postContent,
+        date: new Date().toISOString(),
+        likes: 0,
+        comments: [],
+        image: postImage ? URL.createObjectURL(postImage) : null
+    };
+
+    // 将新帖子添加到数组头部
+    users[currentUser].posts.unshift(newPost);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    // 关闭模态框
+    closeModal('tieniu-postModal');
+
+    // 重新渲染帖子列表
+    renderPosts();
+}
+
+
+
 // 控制头像面板展开/关闭的交互逻辑
 const avatar = document.getElementById('avatar');
 const avatarPanel = document.getElementById('avatarPanel');
@@ -66,6 +101,11 @@ function showModal(modalId) {
     document.getElementById('modalOverlay').style.display = 'block';
 }
 
+// 添加 showPostModal 函数，用于显示发帖模态框
+function showPostModal(modalId) {
+    showModal(modalId);
+}
+
 // 关闭模态框
 // 添加 closeModal 函数
 function closeModal(modalId) {
@@ -76,6 +116,27 @@ function closeModal(modalId) {
 }
 
 
+//添加渲染帖子列表
+function renderPosts() {
+    const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('users'));
+    const postList = document.getElementById('postList');
+
+    if (postList && users[currentUser] && users[currentUser].posts) {
+        postList.innerHTML = '';
+        users[currentUser].posts.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.className = 'post';
+            postElement.innerHTML = `
+                <h3>${post.title}</h3>
+                <p>${post.content}</p>
+                <span class="post-time">${new Date(post.date).toLocaleString()}</span>
+                <p>❤${post.likes} 💬${post.comments.length}</p>
+            `;
+            postList.appendChild(postElement);
+        });
+    }
+}
 
 
 // 登录按钮点击事件
@@ -227,5 +288,38 @@ if (backgroundColorSelect) {
         const selectedColor = this.value;
         document.body.style.backgroundColor = selectedColor;
     });
+}
+
+
+function submitPost() {
+    const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('users'));
+    const postTitle = document.getElementById('tieniu-postTitle').value;
+    const postContent = document.getElementById('tieniu-postContent').value;
+    const postImage = document.getElementById('tieniu-postImage').files[0];
+
+    if (!currentUser || !users[currentUser]) {
+        alert('请先登录');
+        return;
+    }
+
+    const newPost = {
+        title: postTitle,
+        content: postContent,
+        date: new Date().toISOString(),
+        likes: 0,
+        comments: [],
+        image: postImage ? URL.createObjectURL(postImage) : null
+    };
+
+    // 将新帖子添加到数组头部
+    users[currentUser].posts.unshift(newPost);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    // 关闭模态框
+    closeModal('tieniu-postModal');
+
+    // 重新渲染帖子列表
+    renderPosts();
 }
 

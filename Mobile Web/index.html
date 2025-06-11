@@ -12,24 +12,21 @@
         <!-- 左侧更多按钮和站名 -->
         <div class="left-section">
             <button id="toggleBtn">更多</button>
-            <div class="site-name">极客站</div>
+            <div class="geekname">极客站</div>
         </div>
 
         <!-- 搜索框 -->
         <div class="search-container">
             <input type="text" class="search-input" placeholder="搜索数码内容...">
         </div>
-
-        <!-- 右侧功能模块 -->
-        <div class="right-section">
-            <!-- 修改onclick事件为显示模态框 -->
-            <button class="post-btn" onclick="showPostModal()">+</button>
-        </div>
-            
             <!-- 右侧头像模块 -->
-            <img src="https://via.placeholder.com/40" alt="头像" class="avatar" id="avatar">
-        </div>
-    </nav> <!-- 原导航栏结束 -->
+        
+            
+    </nav> 
+    <div class="avatar">
+        <img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.g5M-iZUiocFCi9YAzojtRAAAAA?rs=1&pid=ImgDetMain"   alt="头像"  id="avatar" >
+    </div>
+     <!-- 原导航栏结束 -->
 
     <!-- 新增：帖子列表模块 -->
     <!-- 在导航栏下方添加 -->
@@ -40,9 +37,9 @@
     <!-- 左侧展开功能板块 -->
     <div class="menu-panel" id="menuPanel">
         <div class="menu-item" onclick="window.location.href='index.html'">主页</div>
-        <div class="menu-item">热门</div>
+        <div class="menu-item" style="cursor:not-allowed">热门</div>
         <div class="menu-item" onclick="window.location.href='setting.html'">设置</div>
-        <div class="menu-item">消息</div>
+        <div class="menu-item" style="cursor:not-allowed">消息</div>
     </div>
 
     <!-- 头像展开面板 -->
@@ -50,7 +47,7 @@
         <div class="avatar-panel-item" id="welcomeText">欢迎您，游客</div>
         <div class="avatar-panel-item" id="loginBtn">登录</div>
         <div class="avatar-panel-item" id="registerBtn">注册</div>
-        <div class="avatar-panel-item" id="logoutBtn" style="display: none;">注销登录</div>
+        <div class="avatar-panel-item" id="logoutBtn" style="display: none; ">注销登录</div>
         <div class="avatar-panel-item" id="changeAvatarBtn" style="display: none;">更改头像</div>
         <div class="avatar-panel-item" id="changeNicknameBtn" style="display: none;">更改昵称</div>
     </div>
@@ -82,15 +79,14 @@
         <button onclick="closeModal('editModal')">关闭</button>
     </div>
 
-    <!-- 新增：发布帖子模态框 -->
-    <div class="post-modal" id="postModal" style="display: none;">
+    <!--发布帖子模态框 -->
+    <div class="tieniu-post-modal" id="tieniu-postModal" style="display: none;">
         <h3>发布帖子</h3>
-        <div class="post-modal-content">
-            <input type="file" id="postImage" accept="image/*">
-            <textarea id="postText" placeholder="输入内容..."></textarea>
+        <div class="tieniu-post-modal-content">
+            <input type="file" id="tieniu-postImage" accept="image/*">
+            <textarea id="tieniu-postText" placeholder="输入内容..."></textarea>
+            <button onclick="submitPost()">发布</button>
         </div>
-        <button onclick="publishPost()">发布</button>
-        <button onclick="closePostModal()">关闭</button>
     </div>
 
     <!-- 模态框遮罩 -->
@@ -266,60 +262,130 @@
 </body>
 <body>
 <div style="background-color: white; margin: 0 auto; width: 80%; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-    <!-- 假设帖子内容 -->
-    <div class="post">
+    
+    <div class="post"> 
+
+    <!-- 帖子1 -->
+    <div style="border: 1px solid #ccc; border-radius: 5px; padding: 15px; margin-bottom: 15px;">
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <img src="https://picx.zhimg.com/v2-fa6a56b10387c4deb5f5df9a7a8d82b9_l.png?source=32738c0c" alt="数码闲聊站" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+            <span style="font-weight: bold;">数码闲聊站</span>
+            <button style="margin-left: 780px; background-color: #6e18f9; color: white; border: #666 ; padding: 5px 10px; border-radius: 5px; cursor: pointer;">关注</button>
+        </div>
+       
+        <div style="margin-left: 40px;">
+        <h3>#SU7Ultra量产版纽北成绩超保时捷#</h3>
+        </div>
+        <div style="width: 900px; margin-left: 40px;">
+        <p>《7分04秒957》 《纽北史上最速量产电动车》
+
+            小米SU7 Ultra量产版第一次挑战纽北，成绩就超过了保时捷。在小米造车之前，这成绩谁敢想？证明中国人也有能力做出领先全球的好车！
+            高性能的背后是小米汽车在操控、三电等技术上综合科技实力的体现。国产车硬刚保时捷，实现弯道超车，简直不要太励志👍</p>
+    </div>
+        <img src="img/sm1.jpg" alt="帖子图片" style="max-width: 30%; height: auto; margin-top: 10px;">
+        <img src="img/sm2.jpg" alt="帖子图片" style="max-width: 30%; height: auto; margin-top: 10px;">
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <span style="color: #666;">2025-06-11 12:32</span>
+            <h3>❤6241 💬750</h3>
+        </div>
+    
+    </div>
+        
+   <!-- 帖子2 -->    
 <div style="border: 1px solid #ccc; border-radius: 5px; padding: 15px; margin-bottom: 15px;">
     <div style="display: flex; align-items: center; margin-bottom: 10px;">
-        <img src="https://via.placeholder.com/40" alt="用户头像" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-        <span style="font-weight: bold;">示例用户昵称</span>
+        <img src="https://img.ixintu.com/download/jpg/20200816/0e0d0cea393f66fc62eb844dd349ff13_512_512.jpg!con" alt="用户头像" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+        <span style="font-weight: bold;">酷安网</span>
+        <button style="margin-left: 800px; background-color: #6e18f9; color: white; border: #666 ; padding: 5px 10px; border-radius: 5px; cursor: pointer;">关注</button>
     </div>
-    <h3>示例帖子标题</h3>
-    <p>这是示例帖子的内容。这里可以展示各种数码相关的讨论、评测等信息。</p>
+    
+    <div style="margin-left: 40px;">
+    <h3>#Nothing</h3>
+    </div>
+    <div style="width: 1000px; margin-left: 40px;">
+    <p>海外博主曝光了即将推出的 Nothing Phone（3）高清渲染图，图片展示其将配备后置三摄，但似乎取消了标志性的 Glyph 灯带。</p>
 </div>
+    <img src="img/kuan.jpg" alt="帖子图片" style="max-width: 30%; height: auto; margin-top: 10px;">
+    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+        <span style="color: #666;">2024-09-12 15:30</span>
+    <h3>❤13 💬9</h3>
+    </div>
+
+</div>
+    <!--帖子3-->
+<div style="border: 1px solid #ccc; border-radius: 5px; padding: 15px; margin-bottom: 15px;">
+    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <img src="img/bb.jpg" alt="我的宝宝" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+        <span style="font-weight: bold;">左文雅</span>
+        <button style="margin-left: 800px; background-color: #6e18f9; color: white; border: #666 ; padding: 5px 10px; border-radius: 5px; cursor: pointer;">关注</button>
+    </div>
+   
+    <div style="margin-left: 40px;">
+    <h3>#朋友圈</h3>
+    </div>
+    <div style="width: 1000px; margin-left: 40px;">
+    <p>收到礼物🎁 开心🎉</p>
+</div>
+    <img src="img/pyq1.jpg" alt="帖子图片" style="max-width: 30%; height: auto; margin-top: 10px;">
+    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+        <span style="color: #666;">2024-06-6 17:15</span>
+        <h3>❤9999+ 💬9999+</h3>
+    </div>
+
+</div>
+    
+    <!-- 帖子4 -->
+    <div style="border: 1px solid #ccc; border-radius: 5px; padding: 15px; margin-bottom: 15px;">
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <img src="img/bb.jpg" alt="我的宝宝" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+            <span style="font-weight: bold;">左文雅</span>
+            <button style="margin-left: 800px; background-color: #6e18f9; color: white; border: #666 ; padding: 5px 10px; border-radius: 5px; cursor: pointer;">关注</button>
+        </div>
+       
+        <div style="margin-left: 40px;">
+        <h3>生日快乐</h3>
+        </div>
+        <div style="width: 1000px; margin-left: 40px;">
+        <p>🎂许愿啦</p>
+    </div>
+        <video src="vidio/vlog1.mp4" alt="点击观看" style="max-width: 30%; height: auto; margin-top: 10px;" controls></video>
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <span style="color: #666;">2024-06-6 17:15</span>
+            <h3>❤9999+ 💬9999+</h3>
+        </div>
+    
+    </div>
+
+    <!-- 帖子5 -->
+    <div style="border: 1px solid #ccc; border-radius: 5px; padding: 15px; margin-bottom: 15px;">
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <img src="img/bb.jpg" alt="我的宝宝" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+            <span style="font-weight: bold;">左文雅</span>
+            <button style="margin-left: 800px; background-color: #6e18f9; color: white; border: #666 ; padding: 5px 10px; border-radius: 5px; cursor: pointer;">关注</button>
+        </div>
+        <!--帖子2-->
+        <div style="margin-left: 40px;">
+        <h3>新年快乐</h3>
+        </div>
+        <div style="width: 1000px; margin-left: 40px;">
+        <p>你好2025</p>
+    </div>
+        <img src="img/pyq2-1.jpg" alt="帖子图片" style="max-width: 30%; height: auto; margin-top: 10px;">
+        <img src="img/pyq2-2.jpg" alt="帖子图片" style="max-width: 30%; height: auto; margin-top: 10px;">
+        <img src="img/pyq2-3.jpg" alt="帖子图片" style="max-width: 30%; height: auto; margin-top: 10px;">
+        <img src="img/pyq2-4.jpg" alt="帖子图片" style="max-width: 30%; height: auto; margin-top: 10px;">
+        <img src="img/pyq2-5.jpg" alt="帖子图片" style="max-width: 30%; height: auto; margin-top: 10px;">
+        <img src="img/pyq2-6.jpg" alt="帖子图片" style="max-width: 30%; height: auto; margin-top: 10px;">
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <span style="color: #666;">2025-01-1 00:47</span>
+            <h3>❤9999+ 💬9999+</h3>
+        </div>
+    
     </div>
 </div>
 </body>
 </html>
-
+    
 </html>
-
-<!-- 在文件底部添加模态框 -->
-<div id="postModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closePostModal()">&times;</span>
-        <h2>发布帖子</h2>
-        <input type="text" id="postTitle" placeholder="标题">
-        <textarea id="postContent" placeholder="内容"></textarea>
-        <button onclick="submitPost()">发布</button>
-    </div>
-</div>
-
-<script>
-// 假设这是检查用户是否登录的函数
-function isUserLoggedIn() {
-    // 这里需要根据实际情况实现登录检查逻辑
-    // 返回 true 表示已登录，false 表示未登录
-    return false;
-}
-
-function checkLoginAndOpenPostModal() {
-    if (!isUserLoggedIn()) {
-        alert('请先登录');
-        return;
-    }
-    openPostModal();
-}
-
-<!-- ... existing code ... -->
-
-function submitPost() {
-    const title = document.getElementById('postTitle').value;
-    const content = document.getElementById('postContent').value;
-    // 这里需要根据实际情况实现发布帖子的逻辑
-    console.log('标题:', title);
-    console.log('内容:', content);
-    closePostModal();
-}
-</script>
 </html>
 
