@@ -17,11 +17,28 @@ avatar.addEventListener('click', () => {
 });
 
 // 控制左侧菜单展开/关闭的交互逻辑（已修正拼写错误）
+// 获取元素
 const toggleBtn = document.getElementById('toggleBtn');
 const menuPanel = document.getElementById('menuPanel');
-toggleBtn.addEventListener('click', () => {
-    menuPanel.classList.toggle('active');
-});
+const modalOverlay = document.getElementById('modalOverlay');
+
+// 显示抽屉
+function showMenu() {
+    menuPanel.classList.add('show');
+    modalOverlay.classList.add('show');
+}
+
+// 隐藏抽屉
+function hideMenu() {
+    menuPanel.classList.remove('show');
+    modalOverlay.classList.remove('show');
+}
+
+// 为更多按钮添加点击事件
+toggleBtn.addEventListener('click', showMenu);
+
+// 为遮罩层添加点击事件，点击遮罩层隐藏抽屉
+modalOverlay.addEventListener('click', hideMenu);
 
 // 点击页面其他区域关闭面板
 document.addEventListener('click', (e) => {

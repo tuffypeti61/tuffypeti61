@@ -67,10 +67,16 @@ function showModal(modalId) {
 }
 
 // 关闭模态框
+// 添加 closeModal 函数
 function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-    document.getElementById('modalOverlay').style.display = 'none';
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
+
+
+
 
 // 登录按钮点击事件
 document.getElementById('loginBtn').addEventListener('click', () => {
@@ -103,9 +109,20 @@ function handleRegister() {
     const username = document.getElementById('registerUsername').value;
     const password = document.getElementById('registerPassword').value;
     const users = JSON.parse(localStorage.getItem('users'));
+    const registerError = document.getElementById('registerError');
+
+    if (!username || !password) {
+        registerError.textContent = '用户名和密码不能为空';
+        return;
+    }
+
+    if (password.length < 6) {
+        registerError.textContent = '密码长度不能小于 6 位';
+        return;
+    }
 
     if (users[username]) {
-        alert('用户名已存在');
+        registerError.textContent = '用户名已存在';
         return;
     }
 
@@ -116,6 +133,7 @@ function handleRegister() {
     };
 
     localStorage.setItem('users', JSON.stringify(users));
+    registerError.textContent = '';
     alert('注册成功，请登录');
     closeModal('registerModal');
 }
@@ -125,13 +143,20 @@ function handleLogin() {
     const username = document.getElementById('loginUsername').value;
     const password = document.getElementById('loginPassword').value;
     const users = JSON.parse(localStorage.getItem('users'));
+    const loginError = document.getElementById('loginError');
+
+    if (!username || !password) {
+        loginError.textContent = '用户名和密码不能为空';
+        return;
+    }
 
     if (users[username] && users[username].password === password) {
         localStorage.setItem('currentUser', username);
+        loginError.textContent = '';
         checkLoginStatus();
         closeModal('loginModal');
     } else {
-        alert('用户名或密码错误');
+        loginError.textContent = '用户名或密码错误';
     }
 }
 
