@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>极客站 数码交流</title>
+    <title>极客站 设置</title>
     <link rel="stylesheet" href="head.css">
 </head>
 <body>
@@ -22,20 +22,10 @@
 
         <!-- 右侧功能模块 -->
         <div class="right-section">
-            <!-- 修改onclick事件为显示模态框 -->
-            <button class="post-btn" onclick="showPostModal()">+</button>
-        </div>
-            
-            <!-- 右侧头像模块 -->
+            <button class="post-btn">+</button>
             <img src="https://via.placeholder.com/40" alt="头像" class="avatar" id="avatar">
         </div>
-    </nav> <!-- 原导航栏结束 -->
-
-    <!-- 新增：帖子列表模块 -->
-    <!-- 在导航栏下方添加 -->
-    <div class="post-list" id="postList">
-        <!-- 帖子将动态插入此处 -->
-    </div>
+    </nav>
 
     <!-- 左侧展开功能板块 -->
     <div class="menu-panel" id="menuPanel">
@@ -80,17 +70,6 @@
         <input type="file" id="newAvatar" accept="image/*">
         <button onclick="handleEdit()">保存</button>
         <button onclick="closeModal('editModal')">关闭</button>
-    </div>
-
-    <!-- 新增：发布帖子模态框 -->
-    <div class="post-modal" id="postModal" style="display: none;">
-        <h3>发布帖子</h3>
-        <div class="post-modal-content">
-            <input type="file" id="postImage" accept="image/*">
-            <textarea id="postText" placeholder="输入内容..."></textarea>
-        </div>
-        <button onclick="publishPost()">发布</button>
-        <button onclick="closePostModal()">关闭</button>
     </div>
 
     <!-- 模态框遮罩 -->
@@ -261,65 +240,55 @@
 
         // 初始化检查登录状态
         checkLoginStatus();
+        
     </script>
+    <h1>设置</h1>
+    <div>
+        <label for="font-size">选择字体大小:</label>
+        <select id="font-size">
+            <option value="12px">小</option>
+            <option value="16px">中</option>
+            <option value="20px">大</option>
+        </select>
+    </div>
+    <div>
+        <label for="font-family">选择字体:</label>
+        <select id="font-family">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Verdana">Verdana</option>
+        </select>
+    </div>
+    <div>
+        <label for="text-color">选择文本颜色:</label>
+        <select id="text-color">
+            <option value="#000000">黑色</option>
+            <option value="#ffffff">白色</option>
+            <option value="#ff0000">红色</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="background-color">选择背景颜色:</label>
+        <select id="background-color">
+            <option value="#f0f0f0">灰色</option>
+            <option value="#181818">黑色</option>
+        </select>
+    </div>
     <script src="script.js"></script>
-</body>
-<body>
-<div style="background-color: white; margin: 0 auto; width: 80%; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-    <!-- 假设帖子内容 -->
-    <div class="post">
-<div style="border: 1px solid #ccc; border-radius: 5px; padding: 15px; margin-bottom: 15px;">
-    <div style="display: flex; align-items: center; margin-bottom: 10px;">
-        <img src="https://via.placeholder.com/40" alt="用户头像" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-        <span style="font-weight: bold;">示例用户昵称</span>
+
+    <div>
+        <button id="reset-settings">重置用户密码</button>
+        
+        <!-- 密码重置模态框 -->
+        <div class="reset-modal" id="resetModal">
+            <h3>重置密码</h3>
+            <input type="password" id="newPassword" placeholder="新密码">
+            <button onclick="handleResetPassword()">确认重置</button>
+            <button onclick="closeModal('resetModal')">关闭</button>
+        </div>
     </div>
-    <h3>示例帖子标题</h3>
-    <p>这是示例帖子的内容。这里可以展示各种数码相关的讨论、评测等信息。</p>
-</div>
-    </div>
-</div>
 </body>
 </html>
 
 </html>
-
-<!-- 在文件底部添加模态框 -->
-<div id="postModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closePostModal()">&times;</span>
-        <h2>发布帖子</h2>
-        <input type="text" id="postTitle" placeholder="标题">
-        <textarea id="postContent" placeholder="内容"></textarea>
-        <button onclick="submitPost()">发布</button>
-    </div>
-</div>
-
-<script>
-// 假设这是检查用户是否登录的函数
-function isUserLoggedIn() {
-    // 这里需要根据实际情况实现登录检查逻辑
-    // 返回 true 表示已登录，false 表示未登录
-    return false;
-}
-
-function checkLoginAndOpenPostModal() {
-    if (!isUserLoggedIn()) {
-        alert('请先登录');
-        return;
-    }
-    openPostModal();
-}
-
-<!-- ... existing code ... -->
-
-function submitPost() {
-    const title = document.getElementById('postTitle').value;
-    const content = document.getElementById('postContent').value;
-    // 这里需要根据实际情况实现发布帖子的逻辑
-    console.log('标题:', title);
-    console.log('内容:', content);
-    closePostModal();
-}
-</script>
-</html>
-

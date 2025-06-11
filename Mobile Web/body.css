@@ -49,3 +49,76 @@ body {
 .content-item.active {
     display: block;
 }
+
+
+/* 帖子列表容器 */
+.post-list {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* 单个帖子模块 */
+.post-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+/* 帖子头部信息 */
+.post-left {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* 时间显示样式 */
+.post-time {
+    color: #666;
+    font-size: 0.9em;
+}
+
+
+/* 帖子样式 */
+.post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* 侧边栏样式 */
+#sidebar {
+    position: fixed;
+    left: -200px;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #f4f4f4;
+    transition: left 0.3s ease;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+/* 头像面板样式 */
+#avatarPanel {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#avatarPanel.show {
+    display: block;
+}

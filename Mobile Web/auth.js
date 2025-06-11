@@ -1,11 +1,32 @@
-// 处理注册
+// 使用 localStorage 实现用户系统
+let users = JSON.parse(localStorage.getItem('users') || '{}');
+
 function handleRegister() {
-    // ... existing handleRegister 代码 ...
+  const username = document.getElementById('regUsername').value;
+  const password = document.getElementById('regPassword').value;
+  
+  if (users[username]) {
+    alert('用户名已存在');
+    return;
+  }
+  
+  users[username] = { password };
+  localStorage.setItem('users', JSON.stringify(users));
+  alert('注册成功');
+  window.location.reload();
 }
 
-// 处理登录
 function handleLogin() {
-    // ... existing handleLogin 代码 ...
+  const username = document.getElementById('loginUsername').value;
+  const password = document.getElementById('loginPassword').value;
+  
+  if (users[username]?.password === password) {
+    localStorage.setItem('currentUser', username);
+    alert('登录成功');
+    window.location.reload();
+  } else {
+    alert('用户名或密码错误');
+  }
 }
 
 // 处理信息修改

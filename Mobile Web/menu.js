@@ -9,12 +9,21 @@ function checkLoginStatus() {
 }
 
 // 控制头像面板展开/关闭的交互逻辑
+// 头像面板交互
 const avatar = document.getElementById('avatar');
 const avatarPanel = document.getElementById('avatarPanel');
-avatar.addEventListener('click', () => {
-    avatarPanel.classList.toggle('active');
-    checkLoginStatus();
-});
+
+if (avatar && avatarPanel) {
+    avatar.addEventListener('click', () => {
+        avatarPanel.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!avatar.contains(e.target) && !avatarPanel.contains(e.target)) {
+            avatarPanel.classList.remove('show');
+        }
+    });
+}
 
 // 控制左侧菜单展开/关闭的交互逻辑（已修正拼写错误）
 // 获取元素
@@ -43,4 +52,37 @@ modalOverlay.addEventListener('click', hideMenu);
 // 点击页面其他区域关闭面板
 document.addEventListener('click', (e) => {
     // ... existing 点击关闭逻辑 ...
+});
+
+// 响应式侧边栏
+const sidebar = document.getElementById('sidebar');
+const toggleSidebarButton = document.getElementById('toggleSidebar');
+
+function toggleSidebar() {
+    sidebar.classList.toggle('active');
+}
+
+if (toggleSidebarButton) {
+    toggleSidebarButton.addEventListener('click', toggleSidebar);
+}
+
+// 移动端手势支持
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+
+document.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    const deltaX = touchEndX - touchStartX;
+
+    if (deltaX > 50) {
+        // 右滑打开侧边栏
+        sidebar.classList.add('active');
+    } else if (deltaX < -50) {
+        // 左滑关闭侧边栏
+        sidebar.classList.remove('active');
+    }
 });

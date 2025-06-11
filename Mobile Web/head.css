@@ -92,7 +92,7 @@
 .menu-panel {
     position: fixed;
     top: 60px;
-    left: -200px; /* 初始在左侧外 */
+    left: -400px; /* 初始在左侧外 */
     width: 200px;
     height: calc(100vh - 60px);
     background: #fff;
@@ -117,7 +117,7 @@
 .avatar-panel {
     position: fixed;
     top: 60px;
-    right: -200px; /* 初始在右侧外 */
+    right: -400px; /* 初始在右侧外 */
     width: 200px;
     height: calc(100vh - 60px);
     background: #fff;
@@ -169,20 +169,21 @@ button {
 }
 
 
+/* 删除以下重复样式 */
 /*主体*/
-body {
+body { 
     background-color: #f0f0f0; /* 灰色底图 */
     margin-top: 60px; /* 避免被头部遮挡 */
     padding: 20px;
 }
 
-.main-container {
+.main-container { 
     display: flex;
     gap: 20px;
     height: calc(100vh - 100px); /* 减去头部和上下边距 */
 }
 
-.left-section-block {
+.left-section-block { 
     flex: 1; /* 占三分之一 */
     background-color: white;
     border-radius: 15px; /* 圆滑矩形 */
@@ -190,7 +191,7 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.right-section-block {
+.right-section-block { 
     flex: 2; /* 占三分之二 */
     background-color: white;
     border-radius: 15px; /* 圆滑矩形 */

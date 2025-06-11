@@ -209,3 +209,23 @@ tabItems.forEach((tab) => {
         });
     });
 });
+
+// 语言切换
+const languageSelect = document.getElementById('language');
+if (languageSelect) {
+    languageSelect.addEventListener('change', function() {
+        const selectedLanguage = this.value;
+        document.documentElement.lang = selectedLanguage;
+        // 可以添加更多语言相关的文本替换逻辑
+    });
+}
+
+// 背景颜色切换
+const backgroundColorSelect = document.getElementById('background-color');
+if (backgroundColorSelect) {
+    backgroundColorSelect.addEventListener('change', function() {
+        const selectedColor = this.value;
+        document.body.style.backgroundColor = selectedColor;
+    });
+}
+
