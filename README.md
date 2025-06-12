@@ -10,8 +10,12 @@ You can click the Preview link to take a look at your changes.
 使用传统基础的html js css<br>
 <img src="file/实例1.png">
 <br>
+<br>
+<br>
 <h1>VueTEST</h1>
 存放于vue课程作业项目 并不熟练vue暂存
+<br>
+<br>
 <br>
 <h1>Web</h1>
 存放于web课程作业项目 通常为字体修改 功能效果展示和css美化展示
