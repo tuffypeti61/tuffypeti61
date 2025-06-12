@@ -5,6 +5,18 @@ tuffypeti61/tuffypeti61 is a ✨ special ✨ repository because its `README.md` 
 You can click the Preview link to take a look at your changes.
 --->
 
-<h1>web文件夹</h1>
-tuffypeti61/web 储存了web开发综合实训课程项目作业<br>
-<img src="/web/images/readme/web.png">
+<h1>Mobile Web</h1>
+针对于桌面端和移动端双端的微博客 <br>
+使用传统基础的html js css<br>
+<img src="file/实例1.png">
+<br>
+<br>
+<br>
+<h1>VueTEST</h1>
+存放于vue课程作业项目 并不熟练vue暂存
+<br>
+<br>
+<br>
+<h1>Web</h1>
+存放于web课程作业项目 通常为字体修改 功能效果展示和css美化展示
+
