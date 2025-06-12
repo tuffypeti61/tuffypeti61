@@ -7,4 +7,8 @@ You can click the Preview link to take a look at your changes.
 
 <h1>Mobile Web</h1>
 针对于桌面端和移动端双端的微博客 使用传统基础的html js css<br>
+<<<<<<< HEAD
 <img src="/web/images/readme/web.png">
+=======
+<img src="/web/images/readme/web.png">
+>>>>>>> 6cc14775246a53a97495c45f7de3354107488522
