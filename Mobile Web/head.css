@@ -76,7 +76,7 @@
     height: 40px;
     border-radius: 50%;
     border: 1px solid #7a68a7;
-    box-sizing: border-box; /* 确保边框包含在宽高内 */
+    box-sizing: border-box;
     display: flex;
 }
 

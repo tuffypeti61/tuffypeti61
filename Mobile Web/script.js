@@ -75,11 +75,10 @@ avatar.addEventListener('click', () => {
     checkLoginStatus();
 });
 
-// 添加控制左侧菜单展开/关闭的交互逻辑
+// 控制左侧菜单展开/关闭的交互逻辑
 const toggleBtn = document.getElementById('toggleBtn');
 const menuPanel = document.getElementById('menuPanel');
 
-// 原错误：oggleBtn（缺少't'）→ 修正为 toggleBtn
 toggleBtn.addEventListener('click', () => {
     menuPanel.classList.toggle('active');
 });
